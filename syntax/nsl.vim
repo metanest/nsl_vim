@@ -74,4 +74,3 @@ endif
 
 let b:current_syntax = "nsl"
 
-" vim: ts=8
