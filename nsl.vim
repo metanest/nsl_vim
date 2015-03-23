@@ -17,7 +17,7 @@ syntax case match
 syntax keyword nslStructure module declare state interface
 syntax keyword nslStatement if any alt seq proc else
 syntax keyword nslType state_name input output func_in inout func
-syntax keyword nslType func_out func_self reg wire mem
+syntax keyword nslType func_out func_self reg wire mem proc_name
 syntax keyword nslStatement goto return invoke finish
 syntax match nslInclude "#include"
 syntax match nslDefine "#define"
