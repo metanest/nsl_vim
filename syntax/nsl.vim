@@ -14,13 +14,16 @@ endif
 
 syntax case match
 
-syntax keyword nslStructure module declare state interface
-syntax keyword nslStatement if any alt seq proc else
-syntax keyword nslType state_name input output func_in inout func
-syntax keyword nslType func_out func_self reg wire mem proc_name
+syntax keyword nslStructure module declare state interface simulation
+syntax keyword nslStatement if any alt seq proc else while for generate
 syntax keyword nslStatement goto return invoke finish
+syntax keyword nslType state_name label_name proc_name input output inout
+syntax keyword nslType func func_in func_out func_self reg wire mem
+syntax keyword nslType integer variable
+syntax keyword nslType param_int param_str
 syntax match nslInclude "#include"
 syntax match nslDefine "#define"
+syntax match nslDefine "#\(ifndef\|ifdef\|else\|undef\)"
 syntax match nslOperator "\^"
 syntax match nslOperator "&"
 syntax match nslOperator "|"
@@ -41,6 +44,13 @@ syntax match nslNumber "[0-9]\d*"
 syntax match nslNumber "0[oO][0-7]\+" "hs=s+2
 syntax match nslNumber "0[xX][0-9a-fA-F]\+" "hs=s+2
 syntax match nslNumber "0[bB][0-1]*" "hs=s+2
+syntax match nslNumber "[0-9]*'b[01]*"
+syntax match nslNumber "[0-9]*'h[0-9a-f]*"
+syntax match nslNumber "[0-9]*'d[0-9]*"
+syntax match nslNumber "[0-9]*'o[0-7]*"
+syntax match nslSpecial "\(_display\|_finish\|_monitor\|_random\)"
+syntax match nslSpecial "\(_readmemb\|_readmemh\|_time\)"
+syntax match nslSpecial "\(_init|_delay\)"
 
 syntax region nslComment start="/\*" end="\*/"
 syntax region nslString start="\"" end="\""
@@ -68,9 +78,11 @@ if version >= 508 || !exists("did_nsl_syntax_inits")
   HiLink nslConstant Constant
   HiLink nslNumber Number
   HiLink nslString String
+  HiLink nslSpecial Special
 
   delcommand HiLink
 endif
 
 let b:current_syntax = "nsl"
 
+" vim: ts=8
