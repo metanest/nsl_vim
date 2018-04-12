@@ -84,5 +84,3 @@ if version >= 508 || !exists("did_nsl_syntax_inits")
 endif
 
 let b:current_syntax = "nsl"
-
-" vim: ts=8
