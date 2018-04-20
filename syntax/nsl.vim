@@ -50,7 +50,7 @@ syntax match nslNumber "[0-9]*'d[0-9]*"
 syntax match nslNumber "[0-9]*'o[0-7]*"
 syntax match nslSpecial "\(_display\|_finish\|_monitor\|_random\)"
 syntax match nslSpecial "\(_readmemb\|_readmemh\|_time\)"
-syntax match nslSpecial "\(_init|_delay\)"
+syntax match nslSpecial "\(_init\|_delay\)"
 
 syntax region nslComment start="/\*" end="\*/"
 syntax region nslString start="\"" end="\""
