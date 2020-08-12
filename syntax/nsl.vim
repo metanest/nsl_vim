@@ -23,7 +23,7 @@ syntax keyword nslType integer variable
 syntax keyword nslType param_int param_str
 syntax match nslInclude "#include"
 syntax match nslDefine "#define"
-syntax match nslDefine "#\(ifndef\|ifdef\|else\|undef\)"
+syntax match nslDefine "#\(ifndef\|ifdef\|else\|endif\|undef\)"
 syntax match nslOperator "\^"
 syntax match nslOperator "&"
 syntax match nslOperator "|"
